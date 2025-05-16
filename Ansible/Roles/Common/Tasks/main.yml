@@ -16,7 +16,7 @@
       - openvswitch-switch
       - ovn-central
       - ovn-host
-      - tcpdump
+      - wget
     state: present
 
 - name: Add user "{{ new_user }}"
@@ -32,12 +32,6 @@
     user: "{{ new_user }}"
     key: "{{ ssh_public_key }}"
 
-- name: Disable root SSH login
-  lineinfile:
-    path: /etc/ssh/sshd_config
-    regexp: '^PermitRootLogin'
-    line: 'PermitRootLogin no'
-
 - name: Ensure chrony is enabled and started
   service:
     name: chrony
@@ -50,3 +44,9 @@
     regexp: '^pool '
     line: "pool {{ ntp_server }} iburst"
     state: present
+    
+- name: Allow passwordless sudo
+  copy:
+    dest: /etc/sudoers.d/openstackadmin
+    content: "openstackadmin ALL=(ALL) NOPASSWD:ALL"
+    mode: 0440
