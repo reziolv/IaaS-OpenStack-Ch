@@ -1,12 +1,12 @@
 variable "region" {
   type        = string
-  default     = "ir-thr-ba1"
+  default     = "ir-thr-si1"
   description = "Region for resource deployment"
 }
 
 variable "ssh_key_name" {
   type        = string
-  default = "value"
+  default = "AP"
   description = "Registered SSH key name"
 }
 
@@ -24,7 +24,7 @@ variable "chosen_name" {
 
 variable "chosen_plan_id" {
   type        = string
-  default     = "g2-4-2-0"
+  default     = "g1-1-1-0"
   description = "Plan ID for VM sizing"
 }
 
