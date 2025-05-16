@@ -20,7 +20,7 @@
     - name: Set hostname
       hostname:
         name: "{{ inventory_hostname }}"
-	
+
     - name: Install dockerapt:
       name: docker.io
       state: present
