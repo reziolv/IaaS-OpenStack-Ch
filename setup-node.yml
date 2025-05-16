@@ -21,7 +21,8 @@
       hostname:
         name: "{{ inventory_hostname }}"
 
-    - name: Install dockerapt:
+    - name: Install docker
+    apt:
       name: docker.io
       state: present
       update_cache: yes
