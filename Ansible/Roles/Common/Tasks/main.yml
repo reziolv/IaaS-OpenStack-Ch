@@ -1,0 +1,52 @@
+- name: Update and upgrade OS
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Install base packages
+  apt:
+    name:
+      - python3
+      - python3-pip
+      - net-tools
+      - curl
+      - vim
+      - git
+      - chrony
+      - openvswitch-switch
+      - ovn-central
+      - ovn-host
+      - tcpdump
+    state: present
+
+- name: Add user "{{ new_user }}"
+  user:
+    name: "{{ new_user }}"
+    password: "{{ new_user_password }}"
+    shell: /bin/bash
+    groups: sudo
+    append: yes
+
+- name: Allow SSH key for new user
+  authorized_key:
+    user: "{{ new_user }}"
+    key: "{{ ssh_public_key }}"
+
+- name: Disable root SSH login
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin no'
+
+- name: Ensure chrony is enabled and started
+  service:
+    name: chrony
+    state: started
+    enabled: true
+
+- name: Configure NTP
+  lineinfile:
+    path: /etc/chrony/chrony.conf
+    regexp: '^pool '
+    line: "pool {{ ntp_server }} iburst"
+    state: present
