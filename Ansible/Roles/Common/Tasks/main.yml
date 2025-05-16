@@ -27,26 +27,20 @@
     groups: sudo
     append: yes
 
-- name: Allow SSH key for new user
-  authorized_key:
-    user: "{{ new_user }}"
-    key: "{{ ssh_public_key }}"
+    - name: Add user kolla
+      user:
+        name: kolla
+        shell: /bin/bash
+        groups: sudo
+        append: yes
+        create_home: yes
 
-- name: Ensure chrony is enabled and started
-  service:
-    name: chrony
-    state: started
-    enabled: true
+    - name: Allow passwordless sudo for kolla user
+      copy:
+        dest: /etc/sudoers.d/kolla
+        content: "kolla ALL=(ALL) NOPASSWD:ALL\n"
+        mode: '0440'
 
-- name: Configure NTP
-  lineinfile:
-    path: /etc/chrony/chrony.conf
-    regexp: '^pool '
-    line: "pool {{ ntp_server }} iburst"
-    state: present
-    
-- name: Allow passwordless sudo
-  copy:
-    dest: /etc/sudoers.d/openstackadmin
-    content: "openstackadmin ALL=(ALL) NOPASSWD:ALL"
-    mode: 0440
+    - name: Set hostname (optional)
+      hostname:
+        name: "{{ inventory_hostname }}"
