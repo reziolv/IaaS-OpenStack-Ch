@@ -1,0 +1,24 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Generate passwords
+      command: kolla-genpwd
+      args:
+        chdir: ./kolla/
+
+    - name: Run prechecks
+      command: kolla-ansible -i ansible/inventory/multinode prechecks
+
+    - name: Bootstrap servers
+      command: kolla-ansible -i ansible/inventory/multinode bootstrap-servers
+
+    - name: Deploy OpenStack
+      command: kolla-ansible -i ansible/inventory/multinode deploy
+
+    - name: Post-deploy setup
+      command: kolla-ansible post-deploy
+
+    - name: Create OpenStack RC file
+      shell: |
+        kolla-ansible post-deploy
+        cp /etc/kolla/admin-openrc.sh .
