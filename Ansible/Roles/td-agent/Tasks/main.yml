@@ -1,0 +1,37 @@
+- name: Add td-agent GPG key
+  shell: curl -fsSL https://packages.treasuredata.com/GPG-KEY-td-agent | apt-key add -
+
+- name: Add td-agent repository
+  copy:
+    dest: /etc/apt/sources.list.d/td-agent.list
+    content: "deb http://packages.treasuredata.com/4/ubuntu/focal/ focal contrib"
+
+- name: Update APT cache
+  apt:
+    update_cache: yes
+
+- name: Install td-agent
+  apt:
+    name: td-agent
+    state: present
+
+- name: Upload custom td-agent.conf
+  copy:
+    src: td-agent.conf
+    dest: /etc/td-agent/td-agent.conf
+    owner: root
+    group: root
+    mode: 0644
+    notify: Restart td-agent
+
+- name: Ensure td-agent is enabled and started
+  systemd:
+    name: td-agent
+    enabled: yes
+    state: started
+    
+- name: Restart td-agent
+  ansible.builtin.systemd:
+    name: td-agent
+    state: restarted
+  listen: Restart td-agent
