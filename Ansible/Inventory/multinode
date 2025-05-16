@@ -17,3 +17,7 @@ compute2
 controller
 compute1
 compute2
+
+[all:vars]
+ansible_user=ubuntu
+ansible_become=true
