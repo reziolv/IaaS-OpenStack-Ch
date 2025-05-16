@@ -46,7 +46,7 @@ resource "arvan_network" "private" {
   enable_dhcp    = true
   dhcp_range = {
     start = "192.168.10.20"
-    end   = "192.168.10.150"
+    end   = "192.168.10.23"
   }
   dns_servers = ["8.8.8.8", "1.1.1.1"]
 }
