@@ -1,0 +1,14 @@
+ansible>=6,<8
+docker>=5.0.0
+python-openstackclient>=5.4.0
+python-glanceclient
+python-novaclient
+python-neutronclient
+python-cinderclient
+python-barbicanclient
+python-heatclient
+python-keystoneclient
+python-designateclient
+python-magnumclient
+python-octaviaclient
+kolla-ansible
