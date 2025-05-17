@@ -15,7 +15,7 @@
       pip:
         name:
           - kolla-ansible
-          - ansible-core==2.14.6
+          - ansible-core
           - docker
         executable: pip3
 
