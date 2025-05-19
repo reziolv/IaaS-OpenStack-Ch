@@ -37,6 +37,16 @@ We provision a private network and three virtual machines using ArvanCloud’s T
 
 `Run deploy`
 ---
+✅ Step 3: Monitoring and Logging Node Setup
+
+- `Install Prometheus`
+
+- `Install Fluentd (td-agent)`
+
+- `Configure Prometheus to scrape OpenStack metrics (via exporters)`
+
+- `Fluentd will collect /var/log/kolla logs via file tail`
+---
 ## 🔧 Terraform Resources
 
 ### Provider
