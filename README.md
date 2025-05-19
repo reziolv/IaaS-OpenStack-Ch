@@ -15,6 +15,19 @@ We provision a private network and three virtual machines using ArvanCloud’s T
 - `Node-Compute-2` -> (192.168.10.12)
 
 ---
+## ✅ Step 1: Ansible Environment Preparation
+
+- `Updates the OS`
+
+- `Installs required packages`
+
+- `Adds user and SSH configs`
+
+- `Applies basic security`
+
+- `Prepares environment for Kolla-Ansible`
+---
+
 
 ## 🔧 Terraform Resources
 
