@@ -47,11 +47,11 @@ sudo pip3 install ansible kolla-ansible
 Create required directories and configs:
 
 ```bash
-`sudo mkdir -p /etc/kolla`
-`sudo chown $USER:$USER /etc/kolla`
-`mkdir ~/kolla`
-`cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/`
-`cp /usr/local/share/kolla-ansible/ansible/inventory/multinode ~/kolla/inventory`
+sudo mkdir -p /etc/kolla
+sudo chown $USER:$USER /etc/kolla
+mkdir ~/kolla
+cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
+cp /usr/local/share/kolla-ansible/ansible/inventory/multinode ~/kolla/inventory
 ```
 
 ---
