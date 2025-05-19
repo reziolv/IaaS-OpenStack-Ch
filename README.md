@@ -34,8 +34,23 @@ We provision a private network and three virtual machines using ArvanCloud’s T
 - `Setup inventory`
 
 - `Configure globals.yml and multinode inventory`
+  
+1. Install Kolla-Ansible on Controller Node (192.168.10.22)
+SSH into controller node:
 
-`Run deploy`
+`sudo apt update && sudo apt install -y python3-pip python3-dev libffi-dev gcc libssl-dev git`
+`sudo pip3 install -U pip`
+`sudo pip3 install ansible kolla-ansible`
+
+Create required directories and configs:
+
+`sudo mkdir -p /etc/kolla`
+`sudo chown $USER:$USER /etc/kolla`
+`mkdir ~/kolla`
+`cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/`
+`cp /usr/local/share/kolla-ansible/ansible/inventory/multinode ~/kolla/inventory`
+
+
 ---
 ✅ Step 3: Monitoring and Logging Node Setup
 
