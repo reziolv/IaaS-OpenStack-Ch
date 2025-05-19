@@ -27,8 +27,16 @@ We provision a private network and three virtual machines using ArvanCloud’s T
 
 - `Prepares environment for Kolla-Ansible`
 ---
+## ✅Step 2: Deploy using Kolla-Ansible
 
+- `Clone Kolla-Ansible repo`
 
+- `Setup inventory`
+
+- `Configure globals.yml and multinode inventory`
+
+`Run deploy`
+---
 ## 🔧 Terraform Resources
 
 ### Provider
