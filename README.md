@@ -50,10 +50,47 @@ Create required directories and configs:
 sudo mkdir -p /etc/kolla
 sudo chown $USER:$USER /etc/kolla
 mkdir ~/kolla
-cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
-cp /usr/local/share/kolla-ansible/ansible/inventory/multinode ~/kolla/inventory
+cp -r /IaaS-OpenStack-Ch/kolla/* /etc/kolla/
+cp /IaaS-OpenStack-Ch/kolla/inventory/multinode ~/kolla/inventory
 ```
 
+2.  Generate Passwords
+```bash
+kolla-genpwd
+```
+
+3. Prechecks & Bootstrap
+```bash
+cd ~/kolla
+
+kolla-ansible -i inventory bootstrap-servers
+kolla-ansible -i inventory prechecks
+```
+kolla-ansible -i inventory deploy
+```bash
+4. Deploy OpenStack
+```
+kolla-ansible -i inventory deploy
+```bash
+
+5.Post-deployment
+Initialize the OpenStack admin environment:
+```
+kolla-ansible post-deploy
+source /etc/kolla/admin-openrc.sh
+```bash
+Verify it's working:
+
+```
+openstack compute service list
+openstack network agent list
+openstack network list
+```bash
+6. Test OVN Networking
+```
+docker exec -it openvswitch_vswitchd ovs-vsctl show
+docker exec -it ovn-controller ovn-sbctl show
+```bash
 ---
 ✅ Step 3: Monitoring and Logging Node Setup
 
