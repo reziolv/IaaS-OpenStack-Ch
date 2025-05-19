@@ -1,6 +1,0 @@
-- hosts: all
-  become: yes
-  roles:
-    - base
-    - td-agent
-    - prometheus-node-exporter

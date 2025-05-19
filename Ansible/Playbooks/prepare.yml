@@ -1,6 +1,0 @@
-- name: Prepare for OpenStack OVN
-  hosts: all
-  become: yes
-
-  roles:
-    - common
