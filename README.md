@@ -10,10 +10,10 @@ This document describes the Terraform configuration used to provision infrastruc
 
 We provision a private network and three virtual machines using ArvanCloud’s Terraform provider:
 
-- `Controller-Compute` -> (192.168.10.10)
-- `Node-Compute-1` -> (192.168.10.11)
-- `Node-Compute-2` -> (192.168.10.12)
-
+- `Controller-Node` -> (192.168.10.22)
+- `Compute-Node-1` -> (192.168.10.23)
+- `Compute-Node-2` -> (192.168.10.21)
+- `Compute-Node-2` -> (192.168.10.24)
 ---
 ## ✅ Step 1: Ansible Environment Preparation
 
