@@ -1,5 +1,0 @@
-ntp_server: pool.ntp.org
-new_user: arvani
-new_user_password: "{{ 'Arvan@1234' | password_hash('sha512') }}"
-ssh_public_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-ansible_python_interpreter: /usr/bin/python3

@@ -1,3 +1,0 @@
-fluentd_enabled: true
-td_agent_forward_host: "192.168.10.20
-td_agent_forward_port: 24224
