@@ -1,0 +1,51 @@
+- name: Update and upgrade system
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Install required packages
+  apt:
+    name:
+      - python3
+      - python3-pip
+      - curl
+      - vim
+      - git
+      - net-tools
+      - software-properties-common
+      - aptitude
+    state: present
+
+- name: Ensure OpenStack user exists
+  user:
+    name: stack
+    groups: sudo
+    shell: /bin/bash
+    state: present
+    create_home: yes
+
+- name: Set authorized key for stack user
+  authorized_key:
+    user: stack
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+- name: Disable UFW firewall (we’ll manage security later)
+  ufw:
+    state: disabled
+
+- name: Set timezone to UTC
+  timezone:
+    name: UTC
+
+- name: Install Docker
+  shell: |
+    curl -fsSL https://get.docker.com | sh
+  args:
+    executable: /bin/bash
+
+- name: Add stack user to docker group
+  user:
+    name: stack
+    groups: docker
+    append: yes
