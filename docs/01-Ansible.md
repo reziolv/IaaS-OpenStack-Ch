@@ -23,4 +23,4 @@ This step prepares all OpenStack nodes for deployment by performing the followin
 ```
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO/ansible
-```bash
+bash```
