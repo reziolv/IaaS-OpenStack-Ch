@@ -14,6 +14,6 @@ enable_cinder: "yes"
 enable_horizon: "yes"
 enable_heat: "yes"
 enable_grafana: "no"
-enable_prometheus: "no"  # You'll configure this manually in Step 3
+enable_prometheus: "no"  # configure this manually in Step 3
 
 docker_registry_mirror: "https://mirror.gcr.io"
