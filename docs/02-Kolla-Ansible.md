@@ -58,3 +58,12 @@ openstack network list
 docker exec -it openvswitch_vswitchd ovs-vsctl show
 docker exec -it ovn-controller ovn-sbctl show
 ```bash
+
+
+** Needed Packages **
+```
+ansible-galaxy collection download ansible.utils community.general ansible.posix openstack.cloud
+ansible-galaxy collection install ./*.tar.gz
+```bash
+
+
