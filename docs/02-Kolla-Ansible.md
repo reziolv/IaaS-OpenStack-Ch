@@ -34,9 +34,9 @@ cd ~/etc/kolla
 kolla-ansible bootstrap-servers -i inventory
 kolla-ansible prechecks -i inventory
 ```
-kolla-ansible -i inventory deploy
-```bash
+
 4. Deploy OpenStack
+
 ```
 kolla-ansible -i inventory deploy
 ```bash
