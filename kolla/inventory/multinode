@@ -8,6 +8,9 @@ compute2 ansible_host=192.168.10.21
 [monitoring]
 monitor ansible_host=192.168.10.24
 
+[loadbalancer]
+192.168.10.22
+
 [all:vars]
 ansible_user=ubuntu
 ansible_ssh_private_key_file=~/.ssh/id_rsa/ar-AP-privatekey.pem
