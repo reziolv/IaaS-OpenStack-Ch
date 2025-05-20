@@ -37,7 +37,7 @@ kolla-ansible prechecks -i inventory
 4. Deploy OpenStack
 
 ```bash
-kolla-ansible -i inventory deploy
+kolla-ansible deploy -i inventory
 ```
 
 5.Post-deployment
