@@ -1,0 +1,56 @@
+---
+- name: Prepare all OpenStack nodes
+  hosts: all
+  become: true
+  vars:
+    new_user: stack
+    required_packages:
+      - python3-pip
+      - curl
+      - vim
+      - git
+      - ufw
+      - net-tools
+      - software-properties-common
+      - docker.io
+      - docker-compose
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+        autoremove: yes
+
+    - name: Install required packages
+      apt:
+        name: "{{ required_packages }}"
+        state: present
+
+    - name: Add user for OpenStack (stack)
+      user:
+        name: "{{ new_user }}"
+        shell: /bin/bash
+        groups: sudo
+        append: yes
+        create_home: yes
+
+    - name: Allow passwordless sudo for stack user
+      copy:
+        dest: "/etc/sudoers.d/{{ new_user }}"
+        content: "{{ new_user }} ALL=(ALL) NOPASSWD:ALL"
+        mode: '0440'
+
+    - name: Enable and start Docker
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: Set hostnames
+      hostname:
+        name: "{{ inventory_hostname }}"
