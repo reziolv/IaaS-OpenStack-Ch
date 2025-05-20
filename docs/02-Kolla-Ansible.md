@@ -6,9 +6,7 @@
 
 - `Configure globals.yml and multinode inventory`
   
-1. Install Kolla-Ansible on Controller Node (192.168.10.22)
-SSH into controller node:
-
+1. Check Kolla-Ansible on Controller Node (192.168.10.22)
 ```bash
 sudo apt update && sudo apt install -y python3-pip python3-dev libffi-dev gcc libssl-dev git
 sudo pip3 install -U pip
