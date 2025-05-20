@@ -73,4 +73,11 @@ ansible-galaxy collection download ansible.utils community.general ansible.posix
 ansible-galaxy collection install ./*.tar.gz
 ```bash
 
+** Solution To --openstack-branch to build **
+```
+kolla-build --base ubuntu \
+  --openstack-release 2024.1 \
+  --tag 2024.1-ubuntu-noble \
+  --openstack-branch master
+```bash
 
