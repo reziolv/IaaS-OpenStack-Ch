@@ -11,6 +11,9 @@ monitor ansible_host=192.168.10.24
 [loadbalancer]
 192.168.10.22
 
+[mariadb]
+192.168.10.22
+
 [baremetal]
 
 [all:vars]
