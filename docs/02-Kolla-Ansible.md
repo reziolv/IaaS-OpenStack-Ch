@@ -18,7 +18,7 @@ Create required directories and configs:
 ```bash
 sudo mkdir -p /etc/kolla
 sudo chown $USER:$USER /etc/kolla
-cp -r IaaS-OpenStack-Ch/kolla /etc/kolla/
+cp -r IaaS-OpenStack-Ch/kolla/* /etc/kolla/
 ```
 
 2.  Generate Passwords
@@ -28,7 +28,7 @@ sudo kolla-genpwd > /etc/kolla/passwords.yml
 
 3. Prechecks & Bootstrap
 ```bash
-cd ~/etc/kolla
+cd /etc/kolla
 
 kolla-ansible bootstrap-servers -i inventory
 kolla-ansible prechecks -i inventory
