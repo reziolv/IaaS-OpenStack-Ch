@@ -18,7 +18,6 @@ Create required directories and configs:
 ```bash
 sudo mkdir -p /etc/kolla
 sudo chown $USER:$USER /etc/kolla
-mkdir ~/kolla
 cp -r IaaS-OpenStack-Ch/kolla* /etc/kolla/
 ```
 
