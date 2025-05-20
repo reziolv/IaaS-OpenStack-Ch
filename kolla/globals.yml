@@ -5,7 +5,7 @@ kolla_internal_vip_address: "192.168.10.100"
 
 network_interface: "eth0"
 neutron_plugin_agent: "ovn"
-
+enable_haproxy: "no"
 enable_ovn: "yes"
 ovn_nb_db_host: "192.168.10.22"
 ovn_sb_db_host: "192.168.10.22"
