@@ -36,16 +36,16 @@ kolla-ansible prechecks -i inventory
 
 4. Deploy OpenStack
 
-```
-kolla-ansible -i inventory deploy
 ```bash
+kolla-ansible -i inventory deploy
+```
 
 5.Post-deployment
 Initialize the OpenStack admin environment:
-```
+```bash
 kolla-ansible post-deploy
 source /etc/kolla/admin-openrc.sh
-```bash
+```
 Verify it's working:
 
 ```
