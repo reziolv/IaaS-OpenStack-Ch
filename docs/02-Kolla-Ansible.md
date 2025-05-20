@@ -21,8 +21,7 @@ Create required directories and configs:
 sudo mkdir -p /etc/kolla
 sudo chown $USER:$USER /etc/kolla
 mkdir ~/kolla
-cp -r /IaaS-OpenStack-Ch/kolla/* /etc/kolla/
-cp /IaaS-OpenStack-Ch/kolla/inventory/multinode ~/kolla/inventory
+cp -r IaaS-OpenStack-Ch/kolla* /etc/kolla/
 ```
 
 2.  Generate Passwords
