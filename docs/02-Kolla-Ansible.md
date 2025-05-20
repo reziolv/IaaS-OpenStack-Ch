@@ -8,7 +8,7 @@
   
 1. Check Kolla-Ansible on Controller Node (192.168.10.22)
 ```bash
-sudo apt update && sudo apt install -ypython3-dev libffi-dev gcc libssl-dev git
+sudo apt update && sudo apt install -ypython3-dev libffi-dev gcc libssl-dev git `optional`
 sudo pip3 install -U pip
 sudo pip3 install ansible kolla-ansible
 ```
