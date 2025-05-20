@@ -10,7 +10,7 @@
 ```bash
 sudo apt update && sudo apt install -ypython3-dev libffi-dev gcc libssl-dev git `optional`
 sudo pip3 install -U pip
-sudo pip3 install ansible kolla-ansible
+sudo pip3 install kolla-ansible
 ```
 
 Create required directories and configs:
