@@ -18,9 +18,21 @@ This step prepares all OpenStack nodes for deployment by performing the followin
 | compute2    | 192.168.10.21  | Compute     |
 | monitor     | 192.168.10.24  | Monitoring  |
 
-📝 Step-by-Step Instructions
+✅ Step 1: Ansible Environment Preparation
+
 1. Clone the Repository
+```bash
+git clone https://github.com/reziolv/IaaS-OpenStack-Ch.git
+cd IaaS-OpenStack-Ch/ansible
 ```
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO/ansible
-bash```
+
+2. Install Ansible
+```bash
+pip install ansible
+```
+
+3. Run the Environment Preparation Playbook
+```bash
+cd ansible
+ansible-playbook -i inventory.ini playbooks/prepare-nodes.yml
+```
