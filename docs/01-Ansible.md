@@ -13,7 +13,7 @@ This step prepares all OpenStack nodes for deployment by performing the followin
 
 | Hostname    | IP Address     | Role        |
 |-------------|----------------|-------------|
-| controller  | 192.168.10.22  | Control     |
+| controller  | 192.168.10.22  | Controller  |
 | compute1    | 192.168.10.23  | Compute     |
 | compute2    | 192.168.10.21  | Compute     |
 | monitor     | 192.168.10.24  | Monitoring  |
