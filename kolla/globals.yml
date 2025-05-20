@@ -16,4 +16,7 @@ enable_heat: "yes"
 enable_grafana: "no"
 enable_prometheus: "no"  # configure this manually in Step 3
 
-docker_registry_mirror: "https://mirror.gcr.io"
+docker_registry: "docker.io"
+docker_registry_username: "mydockeruser"
+docker_registry_password: "A7gL39ksDzqP1rTv"
+docker_registry_email: "mydockeruser@example.com"
