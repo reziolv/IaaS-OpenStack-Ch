@@ -36,3 +36,4 @@ pip install ansible
 ```bash
 ansible-playbook -i inventory.ini playbooks/prepare-nodes.yml
 ```
+![image](https://github.com/user-attachments/assets/f5381f3c-9e3f-4188-89c5-d957cf9c9a77)
