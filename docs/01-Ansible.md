@@ -18,6 +18,7 @@ This step prepares all OpenStack nodes for deployment by performing the followin
 | compute2    | 192.168.10.21  | Compute     |
 | monitor     | 192.168.10.24  | Monitoring  |
 
+---
 ✅ Step 1: Ansible Environment Preparation
 
 1. Clone the Repository
