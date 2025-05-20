@@ -47,14 +47,20 @@ kolla-ansible post-deploy -i /etc/kolla/inventory/multinode
 source /etc/kolla/admin-openrc.sh
 ```
 
-Verify it's working:
+6. Verify it's working:
 
 ```bash
 openstack compute service list
 openstack network agent list
 openstack network list
 ```
-6. Test OVN Networking
+** If Error Shown **
+```
+pip install python-openstackclient
+
+```bash
+
+7. Test OVN Networking
 ```bash
 docker exec -it openvswitch_vswitchd ovs-vsctl show
 docker exec -it ovn-controller ovn-sbctl show
