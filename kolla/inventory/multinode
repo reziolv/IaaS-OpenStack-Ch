@@ -14,8 +14,6 @@ monitor ansible_host=192.168.10.24
 [mariadb]
 192.168.10.22
 
-[baremetal]
-
 [all:vars]
 ansible_user=ubuntu
 ansible_ssh_private_key_file=~/.ssh/id_rsa/ar-AP-privatekey.pem
