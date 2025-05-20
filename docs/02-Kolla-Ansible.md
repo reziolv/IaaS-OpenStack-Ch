@@ -43,21 +43,22 @@ kolla-ansible deploy -i inventory
 5.Post-deployment
 Initialize the OpenStack admin environment:
 ```bash
-kolla-ansible post-deploy
+kolla-ansible post-deploy -i /etc/kolla/inventory/multinode
 source /etc/kolla/admin-openrc.sh
 ```
+
 Verify it's working:
 
-```
+```bash
 openstack compute service list
 openstack network agent list
 openstack network list
-```bash
-6. Test OVN Networking
 ```
+6. Test OVN Networking
+```bash
 docker exec -it openvswitch_vswitchd ovs-vsctl show
 docker exec -it ovn-controller ovn-sbctl show
-```bash
+```
 
 
 ** Needed Packages **
