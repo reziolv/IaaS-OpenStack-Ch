@@ -17,7 +17,7 @@ enable_grafana: "no"
 enable_prometheus: "no"  # configure this manually in Step 3
 
 docker_registry: "docker.io"
-docker_registry_username: "rezavzarei"
+docker_registry_username: "reziolv"
 docker_registry_password: "Reza@1234"
 docker_registry_email: "rezavzarei@gmail.com"
 nova-compute-ironic:
