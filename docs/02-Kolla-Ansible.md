@@ -29,10 +29,10 @@ kolla-genpwd
 
 3. Prechecks & Bootstrap
 ```bash
-cd ~/kolla
+cd ~/etc/kolla
 
-kolla-ansible -i inventory bootstrap-servers
-kolla-ansible -i inventory prechecks
+kolla-ansible bootstrap-servers -i inventory
+kolla-ansible prechecks -i inventory
 ```
 kolla-ansible -i inventory deploy
 ```bash
