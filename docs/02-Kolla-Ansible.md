@@ -23,7 +23,7 @@ cp -r IaaS-OpenStack-Ch/kolla* /etc/kolla/
 
 2.  Generate Passwords
 ```bash
-kolla-genpwd
+sudo kolla-genpwd > /etc/kolla/passwords.yml
 ```
 
 3. Prechecks & Bootstrap
