@@ -15,7 +15,7 @@ We provision a private network and three virtual machines using ArvanCloud’s T
 - `Compute-Node-2` -> (192.168.10.21)
 - `Compute-Node-2` -> (192.168.10.24)
 ---
-## ✅ Step 1: Ansible Environment Preparation
+## ✅ Step 1: [Ansible Environment Preparation](https://github.com/reziolv/IaaS-OpenStack-Ch/blob/main/docs/01-Ansible.md)
 
 - `Updates the OS`
 
