@@ -20,3 +20,5 @@ docker_registry: "docker.io"
 docker_registry_username: "mydockeruser"
 docker_registry_password: "A7gL39ksDzqP1rTv"
 docker_registry_email: "mydockeruser@example.com"
+nova-compute-ironic:
+  enabled: false
