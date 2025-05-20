@@ -34,6 +34,5 @@ pip install ansible
 
 3. Run the Environment Preparation Playbook
 ```bash
-cd ansible
 ansible-playbook -i inventory.ini playbooks/prepare-nodes.yml
 ```
