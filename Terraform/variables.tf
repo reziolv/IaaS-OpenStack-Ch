@@ -18,18 +18,18 @@ variable "chosen_distro_name" {
 
 variable "chosen_name" {
   type        = string
-  default     = "22.04"
-  description = "Image release name (e.g. 22.04)"
+  default     = "24.04"
+  description = "Image release Version"
 }
 
 variable "chosen_plan_id" {
   type        = string
   default     = "g2-4-2-0"
-  description = "Plan ID for VM sizing"
+  description = "Plan ID"
 }
 
 variable "node_names" {
   type        = list(string)
-  default     = ["controller", "compute1", "compute2"]
+  default     = ["controller", "compute1", "compute2", "monitoring"]
   description = "List of OpenStack node names"
 }
