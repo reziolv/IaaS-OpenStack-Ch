@@ -1,5 +1,7 @@
+openstack_release: "2024.2"
 kolla_base_distro: "ubuntu"
-kolla_install_type: "source"
+kolla_install_type: "binary"
+kolla_tag: "2024.2-ubuntu-noble"
 openstack_release: "2024.1"
 docker_registry: "quay.io"
 namespace: "openstack.kolla"
