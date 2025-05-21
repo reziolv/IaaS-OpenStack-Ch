@@ -5,6 +5,7 @@ docker_registry: "quay.io"
 namespace: "openstack.kolla"
 tag: "2024.1-ubuntu"
 kolla_internal_vip_address: "192.168.10.22"
+enable_keystone: "yes"
 
 network_interface: "eth0"
 neutron_plugin_agent: "ovn"
