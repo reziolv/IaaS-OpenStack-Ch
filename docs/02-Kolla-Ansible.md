@@ -69,6 +69,10 @@ docker exec -it ovn-controller ovn-sbctl show
 
 ** Needed Packages **
 ```
+kolla-ansible install-deps
+```bash
+Or
+```
 ansible-galaxy collection download ansible.utils community.general ansible.posix openstack.cloud
 ansible-galaxy collection install ./*.tar.gz
 ```bash
