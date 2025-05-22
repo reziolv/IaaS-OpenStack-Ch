@@ -85,3 +85,6 @@ kolla-build --base ubuntu \
   --openstack-branch master
 ```bash
 
+
+http+docker problem
+sudo usermod -aG docker ubuntu
