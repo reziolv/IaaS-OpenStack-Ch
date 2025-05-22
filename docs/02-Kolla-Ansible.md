@@ -10,7 +10,7 @@
 ```bash
 sudo apt update && sudo apt install -ypython3-dev libffi-dev gcc libssl-dev git `optional`
 sudo pip3 install -U pip
-sudo pip3 install kolla-ansible
+sudo pip3 install kolla-ansible docker
 ```
 
 Create required directories and configs:
@@ -73,7 +73,7 @@ kolla-ansible install-deps
 ```bash
 Or
 ```
-ansible-galaxy collection download ansible.utils community.general ansible.posix openstack.cloud
+ansible-galaxy collection install ansible.utils community.general ansible.posix openstack.cloud
 ansible-galaxy collection install ./*.tar.gz
 ```bash
 
